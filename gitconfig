@@ -52,7 +52,8 @@
 [user]
 	email = yuhriparada@gmail.com
 	name = YuhriParada
-[safe]
-	directory = /root/flutter
+; [safe]
+; 	directory = /root/flutter
 [init]
 	defaultBranch = main
+	name = Yuhri Parada
