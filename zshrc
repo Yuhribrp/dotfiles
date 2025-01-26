@@ -16,6 +16,10 @@ ZSH_DISABLE_COMPFIX=true
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
+alias fprev='nvim $(fzf -m --preview="batcat --color=always {}")'
+alias crs='clear && bin/rails s'
+alias crc='clear && rails c'
+
 # Load rbenv if installed (to manage your Ruby versions)
 export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
@@ -57,6 +61,8 @@ type -a nvm > /dev/null && load-nvmrc
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs
 export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
+# export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -66,4 +72,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export BUNDLER_EDITOR=code
-sudo /etc/init.d/postgresql start
+# sudo /etc/init.d/postgresql start
+# sudo chown mongodb:mongodb /var/run/mongod.pid
+# sudo service mongodb start
